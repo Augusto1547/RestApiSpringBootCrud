@@ -27,18 +27,18 @@ public class ContaController {
 	ContaRepository contaRepository;
 
 	@PostMapping
-	public Conta saveConta(@RequestBody Conta conta) {
+	public Usuario saveConta(@RequestBody Usuario conta) {
 		return contaRepository.save(conta);
 	}
 
 	@GetMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public List<Conta> getAllCarros() {
+	public List<Usuario> getAllCarros() {
 		return contaRepository.findAll();
 	}
 
 	@GetMapping("/{id}")
-	public Conta getContaById(@PathVariable Long id) {
+	public Usuario getContaById(@PathVariable Long id) {
 		return contaRepository.findById(id).get();
 		// entre outras
 	}
